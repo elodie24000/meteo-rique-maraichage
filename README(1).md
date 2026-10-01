@@ -2,7 +2,7 @@
 
 Application web mobile pour le maraîchage biologique et la pépinière.
 
-👉 **App en ligne : https://elod-oss.github.io/meteo-rique-maraichage/**
+👉 **App en ligne : https://elodie24000.github.io/meteo-risque-maraichage/**
 
 ## Ce que fait l'app
 

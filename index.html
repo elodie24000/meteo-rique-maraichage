@@ -12,8 +12,8 @@
 <meta property="og:title" content="Outil d'aide au maraîchage">
 <meta property="og:description" content="Anticipez les maladies de vos cultures selon la météo locale.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://elod-oss.github.io/meteo-rique-maraichage/">
-<meta property="og:image" content="https://elod-oss.github.io/meteo-rique-maraichage/icon.svg">
+<meta property="og:url" content="https://elodie24000.github.io/meteo-risque-maraichage/">
+<meta property="og:image" content="https://elodie24000.github.io/meteo-risque-maraichage/icon.svg">
 <title>Outil d'aide · au maraîchage</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1346,7 +1346,7 @@ if ('serviceWorker' in navigator) {
   };
 
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/meteo-rique-maraichage/sw.js', { scope: '/meteo-rique-maraichage/' })
+    navigator.serviceWorker.register('./sw.js', { scope: './' })
       .then(reg => {
         // Cas 1 : SW deja installe et en attente depuis une session precedente (cas frequent sur mobile)
         if (reg.waiting && navigator.serviceWorker.controller) {
