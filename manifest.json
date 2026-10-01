@@ -1,10 +1,10 @@
 {
-  "id": "./",
+  "id": "/meteo-rique-maraichage/",
   "name": "Outil d'aide au maraîchage",
   "short_name": "Maraîchage",
   "description": "Anticipez les maladies de vos cultures maraîchères selon les prévisions météo locales sur 7 jours.",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "/meteo-rique-maraichage/",
+  "scope": "/meteo-rique-maraichage/",
   "display": "standalone",
   "display_override": ["window-controls-overlay", "standalone"],
   "background_color": "#f4efe4",

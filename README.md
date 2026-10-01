@@ -25,8 +25,8 @@ L'application est installable sur mobile et desktop. Un bandeau d'installation a
 Projet HTML/CSS/JS monofichier, sans build, hébergé sur GitHub Pages.
 
 ```sh
-git clone https://github.com/elodie24000/meteo-risque-maraichage.git
-cd meteo-risque-maraichage
+git clone https://github.com/elod-oss/meteo-rique-maraichage.git
+cd meteo-rique-maraichage
 
 # Serveur local (requis pour le service worker)
 npx serve .
