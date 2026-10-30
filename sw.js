@@ -1,9 +1,12 @@
-﻿const CACHE = 'maraichage-v13';
-const FONT_CACHE = 'maraichage-fonts-v13';
+﻿const CACHE = 'maraichage-v14';
+const FONT_CACHE = 'maraichage-fonts-v14';
 const APP_SHELL = [
   '/meteo-rique-maraichage/',
   '/meteo-rique-maraichage/index.html',
   '/meteo-rique-maraichage/offline.html',
+  '/meteo-rique-maraichage/manifest.json',
+  '/meteo-rique-maraichage/icon-192.png',
+  '/meteo-rique-maraichage/icon-512.png',
 ];
 
 // Domaines API — jamais mis en cache, réseau uniquement
