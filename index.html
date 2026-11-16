@@ -284,7 +284,7 @@ main{position:relative;z-index:2;padding:0 0 30px}
   margin-bottom:14px;overflow-x:auto;
 }
 .day{text-align:center;padding:8px 2px;border-radius:8px;background:var(--paper-2);display:flex;flex-direction:column;gap:3px;align-items:center;justify-content:center}
-.day.today{background:var(--green-d);color:var(--paper)}
+
 .day-name{font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;opacity:.7}
 .day-icon{font-size:18px;line-height:1;margin:2px 0}
 .day.today .day-name{opacity:1}
@@ -402,6 +402,9 @@ footer{text-align:center;padding:24px 18px 12px;font-size:10.5px;letter-spacing:
 .day.w-storm  { background:linear-gradient(160deg,#bcc0cc 0%,#9ca0b0 100%); color:#1a1e2a; }
 .day.today { background:var(--green-d) !important; color:var(--paper) !important; }
 .day.today .day-name,.day.today .day-rain { color:inherit; opacity:.85; }
+
+/* ===== LABEL TYPE ACTION ===== */
+.action-type-lbl { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
 
 /* ===== BARRE DE RISQUE ===== */
 .risk-bar-wrap { height:4px; background:var(--line); border-radius:2px; margin:6px 0 10px; overflow:hidden; }
@@ -1121,9 +1124,7 @@ const HISTORY_KEY = 'planche-historique';
 function saveHistory(days) {
   try { localStorage.setItem(HISTORY_KEY, JSON.stringify(days)); } catch(e) {}
 }
-function loadHistory() {
-  try { const s = localStorage.getItem(HISTORY_KEY); return s ? JSON.parse(s) : null; } catch(e) { return null; }
-}
+
 
 function computeHistoryDays(pastStats) {
   const dayNames = ['dim','lun','mar','mer','jeu','ven','sam'];
@@ -1333,7 +1334,7 @@ function renderMeteo(loc, forecast) {
           if (!act) return '<strong>Action :</strong> ' + a.clim.alerte;
           const typeLbl = act.type === 'preventif' ? '🛡️ PRÉVENTIF' : act.type === 'curatif' ? '💊 CURATIF' : '👁️ SURVEILLANCE';
           const typeClass = act.type === 'preventif' ? 'color:var(--green-d)' : act.type === 'curatif' ? 'color:var(--rust)' : 'color:var(--gold)';
-          return '<div style="margin-bottom:8px"><span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;' + typeClass + '">' + typeLbl + '</span></div>' +
+          return '<div style="margin-bottom:8px"><span class="action-type-lbl" style="' + typeClass + '">' + typeLbl + '</span></div>' +
             '<div style="margin-bottom:6px"><strong style="color:var(--green-d)">Quoi faire :</strong> ' + act.quoi + '</div>' +
             '<div><strong style="color:var(--rust)">Quand agir :</strong> ' + act.quand + '</div>';
         })()}</div>
