@@ -1124,6 +1124,9 @@ const HISTORY_KEY = 'planche-historique';
 function saveHistory(days) {
   try { localStorage.setItem(HISTORY_KEY, JSON.stringify(days)); } catch(e) {}
 }
+function loadHistory() {
+  try { const s = localStorage.getItem(HISTORY_KEY); return s ? JSON.parse(s) : null; } catch(e) { return null; }
+}
 
 
 function computeHistoryDays(pastStats) {
@@ -1199,13 +1202,7 @@ function toggleHistDetail(i) {
     });
   }
   html += `</div>`;
-  const risquesWrap = document.getElementById('risques-loaded');
-  if (risquesWrap) {
-    risquesWrap.innerHTML = html;
-    risquesWrap.style.display = '';
-    const rs = document.getElementById('risques-setup');
-    if (rs) rs.style.display = 'none';
-  }
+  wrap.innerHTML = html;
 }
 
 function weatherIcon(code) {
@@ -1286,6 +1283,9 @@ function renderMeteo(loc, forecast) {
     </div>`;
   });
   html += `</div>`;
+
+  // Historique 6 derniers jours
+  if (pastStats.length) html += renderHistoryStrip(pastStats);
 
   // Section "Mes cultures"
   html += renderCulturesSection();
